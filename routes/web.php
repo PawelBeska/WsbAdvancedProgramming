@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/','home.pages.index.index');
+Route::get('/', [\App\Http\Controllers\Home\IndexController::class, 'index'])->name('home.index');
