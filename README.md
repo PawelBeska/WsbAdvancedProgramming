@@ -1,14 +1,14 @@
-##WsbAdvancedProgramming
+## WsbAdvancedProgramming
 
-#O projekcie
+# O projekcie
 
 Projekt stworzony na przedmiot Programowanie Zaawansowane w WSB Chorzów.
 
-#Uruchomienie projektu
+# Uruchomienie projektu
 
 ...
 
-#Dodatkowe informacje
+# Dodatkowe informacje
 
 ...
 
