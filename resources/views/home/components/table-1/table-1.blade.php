@@ -25,7 +25,7 @@
                             window.datatable = $('.table').DataTable({
                                 columns: [
                                     {data: 'title', "sClass": 'title'},
-                                    {data: 'relaseDate', "sClass": 'relaseDate'},
+                                    {data: 'releaseDate', "sClass": 'releaseDate'},
                                     {data: 'genre', "sClass": 'genre'},
                                     {data: 'price', "sClass": 'price'},
                                     {
