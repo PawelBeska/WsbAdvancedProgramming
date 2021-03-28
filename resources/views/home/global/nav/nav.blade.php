@@ -5,11 +5,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('home.index')}}" redirect="true">Home </a>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('home.index')}}/" redirect="true">Home </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" redirect="true">Link</a>
+                <a class="nav-link" href="{{route('home.about.index')}}" redirect="true">O mnie</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" redirect="true">Disabled</a>
