@@ -50,7 +50,7 @@ function changeUrl(url, container) {
             if (container) {
                 $('body').html(data);
             } else {
-                $('div#content').html(data);
+                $('div#app').html(data);
             }
             if (typeof (history.pushState) != "undefined") {
                 let obj = {Page: window.location.pathname, Url: url};
