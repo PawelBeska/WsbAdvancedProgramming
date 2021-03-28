@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\Home\IndexController::class, 'index'])->name('home.index');
 
 Route::get('/o-mnie', [\App\Http\Controllers\Home\IndexController::class, 'index'])->name('home.about.index');
+
+
+Route::get('/tabela-1', [\App\Http\Controllers\Home\Table1Controller::class, 'index'])->name('home.table-1.index');
