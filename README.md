@@ -6,7 +6,13 @@ Projekt stworzony na przedmiot Programowanie Zaawansowane w WSB Chorzów.
 
 ## Uruchomienie projektu
 
-...
+```
+gh repo clone PawelBeska/WsbAdvancedProgramming
+
+//Uzupełnić plik .env własnymi danymi do bazy danych.
+
+php artisan migrate
+```
 
 ## Dodatkowe informacje
 
