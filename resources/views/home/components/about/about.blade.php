@@ -8,7 +8,11 @@
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
                     <p>Paweł Beśka</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                    <h3>Opis</h3>
+                    <p>
+                        Cześć, jestem Paweł! Jestem na drugim roku informatyki na wydziale WSB w chorzowie.
+                    </p>
+                    <img src="https://avatars.githubusercontent.com/u/6086510?v=4" class="rounded w-25 h-25">
                 </blockquote>
             </div>
         </div>
