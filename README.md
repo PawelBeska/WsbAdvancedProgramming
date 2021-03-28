@@ -4,6 +4,10 @@
 
 Projekt stworzony na przedmiot Programowanie Zaawansowane w WSB Chorzów.
 
+## Demo:
+
+...
+
 ## Uruchomienie projektu
 
 ```
