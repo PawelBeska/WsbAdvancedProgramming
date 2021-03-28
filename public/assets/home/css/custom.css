@@ -1,0 +1,28 @@
+.dataTables_processing{
+    background: unset!important;
+}
+#nprogress .bar {
+    background: #00bc8c !important;
+}
+#nprogress .spinner-icon {
+    border-top-color: #00bc8c !important;
+    border-left-color: #00bc8c !important;
+}
+select{
+    color:white;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate{
+    color:white;
+}
+label{
+    color:white;
+}
+.dataTables_wrapper .dataTables_filter input{
+    color:white;
+    padding: 10px!important;
+    border: 1px solid #222!important;
+    margin-left: 16px!important;
+}
+table.dataTable tbody tr {
+    background-color: #303030!important;
+}

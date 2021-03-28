@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::name('home.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Home\IndexController::class, 'index'])->name('index');
 
-Route::get('/', [\App\Http\Controllers\Home\IndexController::class, 'index'])->name('home.index');
+    Route::get('/o-mnie', [\App\Http\Controllers\Home\IndexController::class, 'index'])->name('about.index');
 
-Route::get('/o-mnie', [\App\Http\Controllers\Home\IndexController::class, 'index'])->name('home.about.index');
+    Route::resource('table-1', \App\Http\Controllers\Home\Table1Controller::class);
+    Route::post('/table-1/get', [\App\Http\Controllers\Home\Table1Controller::class, 'getData'])->name('table-1.get');
+});
