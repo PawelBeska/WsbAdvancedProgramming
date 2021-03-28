@@ -17,7 +17,7 @@ function errors(data, selector) {
                                 </div>
                                 <div class="content">
                                     ${message}</strong>
-                                    <button type="button" style="margin-top: 6px;" class="close" data-dismiss="alert" aria-label="Close">
+                                    <button type="button"  class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>

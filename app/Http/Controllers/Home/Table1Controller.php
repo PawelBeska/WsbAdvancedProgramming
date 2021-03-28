@@ -52,8 +52,14 @@ class Table1Controller extends Controller
 
     }
 
-    public function destroy(UserDestroyMoviesRequest $request)
+    public function destroy($id, UserDestroyMoviesRequest $request)
     {
+        if ($movie = Movie::find($id)) {
+            $message = new MessageBag();
+            $message->add('success', 'Pomyślnie usunięto film!');
+            $movie->delete();
+            return $message->jsonSerialize();
+        } else return abort(404);
 
     }
 

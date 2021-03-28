@@ -143,7 +143,7 @@
                                             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                                 <a class="dropdown-item view"  href="#">Podgląd</a>
                                                 <a class="dropdown-item update" href="#">Szybka edycja</a>
-                                                <a class="dropdown-item remove" href="#">Zablokuj</a>
+                                                <a class="dropdown-item remove" href="#">Usuń</a>
                                             </div>
                                         </div>`
                                     }
