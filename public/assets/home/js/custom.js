@@ -15,7 +15,7 @@ function errors(data, selector) {
                                 <div class="icon">
                                     <i class="icon mdi mdi-check-circle-outline"></i>
                                 </div>
-                                <div class="content" style="    margin-top: 6px!important;">
+                                <div class="content">
                                     ${message}</strong>
                                     <button type="button" style="margin-top: 6px;" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -24,15 +24,15 @@ function errors(data, selector) {
                             </div>
                         </div>`;
     if (data['error'])
-        selector.prepend(error({'alert': 'alert-border-danger', 'message': data['error']}));
+        selector.prepend(error({'alert': 'alert-danger', 'message': data['error']}));
     else if (data['success'])
-        selector.prepend(error({'alert': 'alert-border-success', 'message': data['success']}));
+        selector.prepend(error({'alert': 'alert-success', 'message': data['success']}));
     else {
         var l = JSON.parse(data.responseText);
         var i = 0;
         $.each(l['errors'], function (heading, text) {
             i++;
-            selector.prepend(error({'alert': 'alert-border-danger', 'message': text}));
+            selector.prepend(error({'alert': 'alert-danger', 'message': text}));
         });
     }
 }
@@ -109,7 +109,7 @@ function init()
         e.preventDefault();
         $.ajax({
             url: formUpdate.attr('action'),
-            type: formUpdate.attr('method'),
+            type: 'PUT',
             global: false,
             cache: false,
             data: formUpdate.serialize(),

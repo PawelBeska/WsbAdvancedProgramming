@@ -1,5 +1,6 @@
 
 
+<div id="form-errors"></div>
 <div class="row create mb-5" style="display: none">
     <div class="col-xl">
         <div class="card">

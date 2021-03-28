@@ -30,16 +30,20 @@ class Table1Controller extends Controller
     {
         $input = $request->validated();
         $message = new MessageBag();
-
         $message->add('success', 'Pomyślnie dodano film!');
         Movie::create($input);
         return $message->jsonSerialize();
 
     }
 
-    public function update(UserUpdateMoviesRequest $request)
+    public function update($id, UserUpdateMoviesRequest $request)
     {
-
+        if ($movie = Movie::find($id)) {
+            $message = new MessageBag();
+            $message->add('success', 'Pomyślnie edytowano film!');
+            $movie->update($request->validated());
+            return $message->jsonSerialize();
+        } else return abort(404);
     }
 
     public function create(UserCreateMoviesRequest $request)
