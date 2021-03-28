@@ -7,7 +7,6 @@ $(document).on({
         NProgress.done();
     }
 });
-
 function errors(data, selector) {
     selector.empty();
     selector.show();
@@ -60,7 +59,7 @@ function changeUrl(url, container) {
                 window.location.href = url;
             }
 
-            //init();
+            init();
             RefreshMenu();
         }
     });
@@ -86,19 +85,132 @@ $(document).ready(function () {
         let container = !!$(this).attr('container');
         if ($(this).attr('redirect')) {
             e.preventDefault();
+            init();
             changeUrl($(this).attr('href'), container);
         }
     });
 
 
-    window.addEventListener('popstate', function (event) {
-        changeUrl(event.state.Url, false);
-    });
-    L
+
+
 
 
 });
 
 $(document).on('click', 'button.create', function () {
     $('div.create').show();
+});
+
+function init()
+{
+    console.log('init');
+    let formUpdate = $("form.update");
+    formUpdate.on('submit',  (function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: formUpdate.attr('action'),
+            type: formUpdate.attr('method'),
+            global: false,
+            cache: false,
+            data: formUpdate.serialize(),
+            success: function (data) {
+                errors(data, $('#form-errors'));
+                window.datatable.ajax.reload();
+                $("form.update select option").each(function ($ez) {
+                    $(this).removeAttr('selected')
+                });
+            },
+            error: function (data) {
+                errors(data, $('#form-errors'));
+            }
+        });
+    }));
+    let formCreate = $("form.create");
+    formCreate.submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: formCreate.attr('action'),
+            type: 'POST',
+            global: false,
+            dataType: 'json',
+            contentType: false,
+            cache: false,
+            processData:false,
+            data: new FormData($('form.create')[0]),
+            success: function (data) {
+                errors(data, $('#form-errors'));
+                window.datatable.ajax.reload();
+            },
+            error: function (data) {
+                errors(data, $('#form-errors'));
+            }
+        });
+    });
+}
+var loc = $('form.update').attr('action') ? $('form.update').attr('action') + '/' : location.href + '/';
+$(document).on('click', 'a.view', function (e) {
+    e.preventDefault();
+    changeUrl(loc + $(this).parents('tr').attr('id'),false);
+});
+$(document).on('click', 'a.remove', function (e) {
+    e.preventDefault();
+    $.ajax({
+        url: loc + $(this).parents('tr').attr('id'),
+        type: 'DELETE',
+        data: {'_token': $('meta[name="csrf-token"]').attr('content')},
+        success: function (data) {
+            errors(data, $('#form-errors'));
+            window.datatable.ajax.reload();
+        },
+        error: function (data) {
+            errors(data, $('#form-errors'));
+        }
+    });
+});
+$(document).on('click', 'a.update', function (e) {
+    e.preventDefault();
+    $('div.update').show();
+    $('form.update').attr({
+        'id': $(this).parents('tr').attr('id'),
+        'action': loc + $(this).parents('tr').attr('id')
+    });
+    var tr = $(this).parents('tr');
+    $('form.update').find(':input.form-control', ':textarea').each(function (e) {
+        $(this).find('option').attr("selected", false);
+        $('form.update .js-select2').val($('form.update .js-select2').val()).trigger('change');
+        let text = tr.find("td." + $(this).attr('id').replace('[]', '')).text();
+        if (text.length) {
+            if ($(this)[0].nodeName == 'INPUT' || $(this)[0].nodeName == 'TEXTAREA') {
+                $(this).val(text);
+            } else if (text.indexOf('[') > -1) {
+                $('form.update .js-select2[name="group[]"]').val(JSON.parse(text)).trigger('change');
+            } else if (text.indexOf('{') > -1) {
+                $(this).val(text);
+            } else if (text.indexOf(',') > -1) {
+                text.split(',').forEach(function ($e) {
+                    $("form.update select option:contains('" + $e + "')").each(function () {
+                        if ($(this).text() == $e) {
+                            $(this).attr('selected', 'selected');
+                        }
+                    });
+                });
+            } else {
+                $("form.update select option:contains('" + text + "')").each(function () {
+                    if ($(this).text() == text) {
+                        $(this).attr('selected', 'selected');
+                    }
+                });
+            }
+            $('form.update .js-select2').val($('form.update .js-select2').val()).trigger('change');
+        }
+    });
+
+});
+$(document).on('click','button.btn-close',function(){
+    $(this).parents('.row').hide();
+    $(this).parents('.row')
+        .not(':button, :submit, :reset, :hidden')
+        .val('')
+        .prop('checked', false)
+        .prop('selected', false);
 });

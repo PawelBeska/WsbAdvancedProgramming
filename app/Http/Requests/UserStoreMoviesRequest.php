@@ -24,7 +24,10 @@ class UserStoreMoviesRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title'=>['string','required','min:3','max:64'],
+            'releaseDate'=>['date','required'],
+            'genre'=>['string','required','min:3','max:64'],
+            'price'=>['integer','required']
         ];
     }
 }

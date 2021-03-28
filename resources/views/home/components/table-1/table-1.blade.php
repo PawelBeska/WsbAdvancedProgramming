@@ -5,10 +5,11 @@
         <div class="card">
             <div class="card-header">
                 Nowy film
+                <div class="float-right"><button type="button" class="btn btn-primary btn-sm btn-close">Zamknij</button></div>
             </div>
             <div class="card-body">
                 <p>Za pomocą tego formularza można dodawać nowe filmy.</p>
-                {!! Form::open(['class'=>'create','url'=>route('home.table-1.store')]) !!}
+                {!! Form::open(['class'=>'create','method'=>'post','url'=>route('home.table-1.store')]) !!}
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         {!! Form::label('title','Tytuł:') !!}
@@ -26,7 +27,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         {!! Form::label('price','Cena:') !!}
-                        {!! Form::number('price',null,['class'=>'form-control','placeholder'=>'Wpisz cenę','required']) !!}
+                        {!! Form::number('price',null,['class'=>'form-control','placeholder'=>'Wpisz cenę','required','step'=>"0.01"]) !!}
                     </div>
 
                 </div>
@@ -36,32 +37,36 @@
         </div>
     </div>
 </div>
-<div class="row update" style="display: none">
+<div class="row update mb-5" style="display: none">
     <div class="col-xl">
         <div class="card">
+            <div class="card-header">
+                Edycja filmu
+                <div class="float-right"><button type="button" class="btn btn-primary btn-sm btn-close">Zamknij</button></div>
+            </div>
             <div class="card-body">
 
                 <h5 class="card-title">Szybka edycja</h5>
-                <p>Za pomocą tego formularza można edytować istniejących już użytkowników.</p>
+                <p>Za pomocą tego formularza można edytować istniejące już filmy.</p>
                 {!! Form::open(['class'=>'update']) !!}
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        {!! Form::label('name','Login:') !!}
-                        {!! Form::text('name',null,['class'=>'form-control','required','placeholder'=>'Wpisz login']) !!}
+                        {!! Form::label('title','Tytuł:') !!}
+                        {!! Form::text('title',null,['class'=>'form-control','required','placeholder'=>'Wpisz tytuł']) !!}
                     </div>
                     <div class="form-group col-md-6">
-                        {!! Form::label('email','Email:') !!}
-                        {!! Form::email('email',null,['class'=>'form-control','required','placeholder'=>'Wpisz email']) !!}
+                        {!! Form::label('genre','Gatunek:') !!}
+                        {!! Form::text('genre',null,['class'=>'form-control','required','placeholder'=>'Wpisz gatunek']) !!}
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        {!! Form::label('password','Hasło:') !!}
-                        {!! Form::password('password',['class'=>'form-control','placeholder'=>'Wpisz hasło']) !!}
+                        {!! Form::label('releaseDate','Data wydania:') !!}
+                        {!! Form::date('releaseDate',null,['class'=>'form-control','required','placeholder'=>'Wpisz datę wydania']) !!}
                     </div>
                     <div class="form-group col-md-4">
-                        {!! Form::label('password_confirmation','Powtórz hasło:') !!}
-                        {!! Form::password('password_confirmation',['class'=>'form-control','placeholder'=>'Wpisz powtórzenie hasła']) !!}
+                        {!! Form::label('price','Cena:') !!}
+                        {!! Form::number('price',null,['class'=>'form-control','placeholder'=>'Wpisz cenę','required','step'=>"0.01"]) !!}
                     </div>
 
                 </div>
@@ -76,13 +81,14 @@
         <div class="card">
             <div class="card-header">
                Tabela 1
-                <div class="float-right"><button type="button" class="btn btn-primary create">Dodaj film</button></div>
+                <div class="float-right"><button type="button" class="btn btn-primary create btn-sm">Dodaj film</button></div>
             </div>
             <div class="card-body">
                 <div class="table-responsive p-t-10">
                     <table id="" class="table" style="width:100%">
                         <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Tytuł</th>
                             <th>Data wydania</th>
                             <th>Gatunek</th>
@@ -118,6 +124,7 @@
                                     }
                                 },
                                 columns: [
+                                    {data: 'id', "sClass": 'id'},
                                     {data: 'title', "sClass": 'title'},
                                     {data: 'releaseDate', "sClass": 'releaseDate'},
                                     {data: 'genre', "sClass": 'genre'},
@@ -128,14 +135,13 @@
                                         "data": null,
                                         "defaultContent": `<div class="btn-group" role="group">
                                             <button id="btnGroupDrop1" type="button"
-                                                    class="btn btn-info dropdown-toggle" data-toggle="dropdown"
+                                                    class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown"
                                                     aria-haspopup="true" aria-expanded="false">
                                                 Wybierz
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                                 <a class="dropdown-item view"  href="#">Podgląd</a>
                                                 <a class="dropdown-item update" href="#">Szybka edycja</a>
-                                                <a class="dropdown-item update" href="#">Edycja</a>
                                                 <a class="dropdown-item remove" href="#">Zablokuj</a>
                                             </div>
                                         </div>`

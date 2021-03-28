@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Home;
 
 
-
 use App\Http\Requests\UserCreateMoviesRequest;
 use App\Http\Requests\UserDestroyMoviesRequest;
 use App\Http\Requests\UserStoreMoviesRequest;
@@ -11,6 +10,7 @@ use App\Http\Requests\UserUpdateMoviesRequest;
 use App\Http\Requests\UserViewMoviesRequest;
 use App\Models\Movie;
 
+use Illuminate\Support\MessageBag;
 use Yajra\DataTables\DataTables;
 
 class Table1Controller extends Controller
@@ -20,6 +20,7 @@ class Table1Controller extends Controller
     {
 
     }
+
     public function getData(UserViewMoviesRequest $request)
     {
         return DataTables::of(Movie::all())->make(true);
@@ -27,6 +28,12 @@ class Table1Controller extends Controller
 
     public function store(UserStoreMoviesRequest $request)
     {
+        $input = $request->validated();
+        $message = new MessageBag();
+
+        $message->add('success', 'Pomyślnie dodano film!');
+        Movie::create($input);
+        return $message->jsonSerialize();
 
     }
 
@@ -34,8 +41,10 @@ class Table1Controller extends Controller
     {
 
     }
+
     public function create(UserCreateMoviesRequest $request)
     {
+
 
     }
 
