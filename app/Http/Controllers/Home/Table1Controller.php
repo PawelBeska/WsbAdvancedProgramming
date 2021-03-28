@@ -16,9 +16,12 @@ use Yajra\DataTables\DataTables;
 class Table1Controller extends Controller
 {
 
-    public function showData($id, $request)
+    public function showData($id)
     {
-
+        if($movie = Movie::find($id))
+        {
+            return $movie;
+        }else abort(404);
     }
 
     public function getData(UserViewMoviesRequest $request)
