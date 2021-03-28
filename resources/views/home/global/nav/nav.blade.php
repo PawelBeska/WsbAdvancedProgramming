@@ -12,6 +12,9 @@
                 <a class="nav-link" href="{{route('home.about.index')}}" redirect="true">O mnie</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{route('home.table-1.index')}}" redirect="true">Tabela 1</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link disabled" href="#" redirect="true">Disabled</a>
             </li>
         </ul>

@@ -6,15 +6,65 @@
                Tabela 1
             </div>
             <div class="card-body">
-                    <p>Paweł Beśka</p>
-                    <h3>Opis</h3>
-                    <p>
-                        Cześć, jestem Paweł! Jestem na drugim roku informatyki na wydziale WSB w chorzowie.
-                    </p>
-                    <img src="https://avatars.githubusercontent.com/u/6086510?v=4" class="rounded w-25 h-25 mb-2">
-                    <p>
-                        Phasellus non turpis enim. Proin iaculis, libero ac tempor aliquet, augue risus commodo elit, nec imperdiet orci quam eget odio. Nunc ut nisl sollicitudin, fermentum ex vel, placerat nisi. Vestibulum vehicula mi risus, et venenatis lacus accumsan pulvinar. Curabitur in gravida sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ornare neque vel odio finibus faucibus. Aliquam ultrices mauris quis nibh elementum, non porta dolor hendrerit. Aenean placerat sem tellus, et consectetur massa faucibus ac. Sed ut ligula sit amet est hendrerit facilisis in eu dui. Fusce pretium malesuada ipsum, eget varius quam pulvinar non. Morbi semper posuere lectus ut blandit. Vivamus lacinia feugiat orci, nec vulputate nunc maximus eget.
-                    </p>
+                <div class="table-responsive p-t-10">
+                    <table id="" class="table" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Tytuł</th>
+                            <th>Data wydania</th>
+                            <th>Gatunek</th>
+                            <th>Cena</th>
+                            <th>Wybierz</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <script>
+                        $(document).ready(function () {
+                            window.datatable = $('.table').DataTable({
+                                columns: [
+                                    {data: 'title', "sClass": 'title'},
+                                    {data: 'relaseDate', "sClass": 'relaseDate'},
+                                    {data: 'genre', "sClass": 'genre'},
+                                    {data: 'price', "sClass": 'price'},
+                                    {
+                                        name: "buttons",
+                                        "targets": -1,
+                                        "data": null,
+                                        "defaultContent": `<div class="btn-group" role="group">
+                                            <button id="btnGroupDrop1" type="button"
+                                                    class="btn btn-info dropdown-toggle" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                Wybierz
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                <a class="dropdown-item view"  href="#">Podgląd</a>
+                                                <a class="dropdown-item update" href="#">Szybka edycja</a>
+                                                <a class="dropdown-item update" href="#">Edycja</a>
+                                                <a class="dropdown-item remove" href="#">Zablokuj</a>
+                                            </div>
+                                        </div>`
+                                    }
+                                ],
+                                "autoWidth": true,
+                                'responsive': true,
+                                "processing": true,
+                                "serverSide": true,
+                                oLanguage: {
+                                    sProcessing: `<div class="lime-body">    <div class="container">        <div class="row" style="  position: absolute;  top: 50%;  left: 50%;  transform: translate(-50%, -50%);">            <div class="col-md-8">                <div class="spinner-border" style="color: #747985" le="status">                    <span class="sr-only">Loading...</span>                </div>            </div>        </div>    </div></div>`
+                                },
+                                rowId: 'id',
+                                ajax: {
+                                    "url": "{{Route('home.table-1.get')}}",
+                                    "type": "POST",
+                                    "data": {"_token": "{{ csrf_token() }}"}
+                                }
+                            });
+                        });
+
+                    </script>
+                </div>
             </div>
         </div>
     </div>
