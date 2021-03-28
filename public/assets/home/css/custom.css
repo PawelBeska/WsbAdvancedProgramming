@@ -23,3 +23,6 @@ label{
     border: 1px solid #222!important;
     margin-left: 16px!important;
 }
+table.dataTable tbody tr {
+    background-color: #303030!important;
+}

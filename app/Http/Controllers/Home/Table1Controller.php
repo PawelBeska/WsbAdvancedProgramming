@@ -9,6 +9,9 @@ use App\Http\Requests\UserDestroyMoviesRequest;
 use App\Http\Requests\UserStoreMoviesRequest;
 use App\Http\Requests\UserUpdateMoviesRequest;
 use App\Http\Requests\UserViewMoviesRequest;
+use App\Models\Movie;
+
+use Yajra\DataTables\DataTables;
 
 class Table1Controller extends Controller
 {
@@ -19,7 +22,7 @@ class Table1Controller extends Controller
     }
     public function getData(UserViewMoviesRequest $request)
     {
-        return [];
+        return DataTables::of(Movie::all())->make(true);
     }
 
     public function store(UserStoreMoviesRequest $request)

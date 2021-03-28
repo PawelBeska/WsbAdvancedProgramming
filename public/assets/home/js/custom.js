@@ -7,6 +7,7 @@ $(document).on({
         NProgress.done();
     }
 });
+
 function errors(data, selector) {
     selector.empty();
     selector.show();
@@ -64,6 +65,7 @@ function changeUrl(url, container) {
         }
     });
 }
+
 function RefreshMenu() {
     $('li').removeClass('active');
     $('li > a').each(function () {
@@ -72,6 +74,7 @@ function RefreshMenu() {
         }
     });
 }
+
 $(document).ready(function () {
     "use strict";
 
@@ -88,10 +91,14 @@ $(document).ready(function () {
     });
 
 
-
     window.addEventListener('popstate', function (event) {
         changeUrl(event.state.Url, false);
     });
+    L
 
 
+});
+
+$(document).on('click', 'button.create', function () {
+    $('div.create').show();
 });

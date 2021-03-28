@@ -15,7 +15,7 @@ class CreateMoviesTable extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
-            
+
             $table->text('title')->nullable(false);
             $table->date('releaseDate')->nullable(false);
             $table->float('price')->nullable(false);
