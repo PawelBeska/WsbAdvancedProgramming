@@ -17,8 +17,8 @@ Route::name('home.')->group(function () {
 
     Route::get('/o-mnie', [\App\Http\Controllers\Home\IndexController::class, 'index'])->name('about.index');
 
-    Route::resource('table-1', \App\Http\Controllers\Home\Table1Controller::class);
-    Route::post('/table-1/get', [\App\Http\Controllers\Home\Table1Controller::class, 'getData'])->name('table-1.get');
+    Route::resource('movies', \App\Http\Controllers\Home\MoviesController::class);
+    Route::post('/movies/get', [\App\Http\Controllers\Home\MoviesController::class, 'getData'])->name('movies.get');
 
 
     Route::resource('employees', \App\Http\Controllers\Home\EmployeeController::class);

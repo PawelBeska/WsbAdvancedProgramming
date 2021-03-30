@@ -13,7 +13,7 @@ use App\Models\Movie;
 use Illuminate\Support\MessageBag;
 use Yajra\DataTables\DataTables;
 
-class Table1Controller extends Controller
+class MoviesController extends Controller
 {
 
     public function showData($id)

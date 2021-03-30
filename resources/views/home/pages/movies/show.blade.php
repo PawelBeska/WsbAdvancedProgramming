@@ -6,5 +6,5 @@
 @endsection()
 
 @section('body')
-    @include('home.components.table-1.show')
+    @include('home.components.movies.show')
 @endsection()

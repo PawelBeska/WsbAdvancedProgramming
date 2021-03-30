@@ -10,7 +10,7 @@
             </div>
             <div class="card-body">
                 <p>Za pomocą tego formularza można dodawać nowe filmy.</p>
-                {!! Form::open(['class'=>'create','method'=>'post','url'=>route('home.table-1.store')]) !!}
+                {!! Form::open(['class'=>'create','method'=>'post','url'=>route('home.movies.store')]) !!}
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         {!! Form::label('title','Tytuł:') !!}
@@ -81,7 +81,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-               Tabela 1
+               Filmy
                 <div class="float-right"><button type="button" class="btn btn-primary create btn-sm">Dodaj film</button></div>
             </div>
             <div class="card-body">
@@ -157,7 +157,7 @@
                                 },
                                 rowId: 'id',
                                 ajax: {
-                                    "url": "{{Route('home.table-1.get')}}",
+                                    "url": "{{Route('home.movies.get')}}",
                                     "type": "POST",
                                     "data": {"_token": "{{ csrf_token() }}"}
                                 }
