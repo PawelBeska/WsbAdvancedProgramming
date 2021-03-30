@@ -22,5 +22,4 @@ php artisan migrate
 
 ## Dodatkowe informacje
 
-...
-
+Demo: http://wsbadvancedprogramming.hypedev.pl/
