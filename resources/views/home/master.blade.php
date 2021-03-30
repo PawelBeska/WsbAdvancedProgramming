@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{URL::asset('assets/home/css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('assets/home/css/custom.css')}}">
 
     <title>WsbAdvancedProgramming</title>
+
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{URL::asset('assets/home/css/custom.css')}}">
     <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
