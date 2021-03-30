@@ -27,7 +27,7 @@ class UserStoreMoviesRequest extends FormRequest
             'title'=>['string','required','min:3','max:64'],
             'releaseDate'=>['date','required'],
             'genre'=>['string','required','min:3','max:64'],
-            'price'=>['integer','required']
+            'price'=>['required']
         ];
     }
 }

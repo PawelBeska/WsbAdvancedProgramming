@@ -1,14 +1,15 @@
-
 <div id="form-errors"></div>
 <div class="row update mb-5" style="display: none">
     <div class="col-xl">
         <div class="card">
             <div class="card-header">
                 Edycja
-                <div class="float-right"><button type="button" class="btn btn-primary btn-sm btn-close">Zamknij</button></div>
+                <div class="float-right">
+                    <button type="button" class="btn btn-primary btn-sm btn-close">Zamknij</button>
+                </div>
             </div>
             <div class="card-body">
-                {!! Form::open(['class'=>'show-update','method'=>'put','url'=>route('home.table-1.update',['table_1'=>$data['id']])]) !!}
+                {!! Form::open(['class'=>'show-update','method'=>'put','url'=>route('home.movies.update',['movie'=>$data['id']])]) !!}
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         {!! Form::label('title','Tytuł:') !!}
@@ -47,19 +48,19 @@
                     <button type="button" class="btn btn-danger btn-sm btn-delete">Usuń</button>
                 </div>
                 <script>
-                    $('button.btn-edit').on('click',function(){
+                    $('button.btn-edit').on('click', function () {
                         $('div.update').show();
                     });
-                    $('button.btn-delete').on('click',function(){
+                    $('button.btn-delete').on('click', function () {
                         $.ajax({
-                            url: "{!! route('home.table-1.update',['table_1'=>$data['id']]) !!}" ,
+                            url: "{!! route('home.movies.update',['movie'=>$data['id']]) !!}",
                             type: 'DELETE',
                             data: {'_token': $('meta[name="csrf-token"]').attr('content')},
                             success: function (data) {
                                 errors(data, $('#form-errors'));
                                 NProgress.done();
-                                setTimeout(function() {
-                                    changeUrl('{!! route('home.table-1.index') !!}',false);
+                                setTimeout(function () {
+                                    changeUrl('{!! route('home.movies.index') !!}', false);
                                 }, 1000);
                             },
                             error: function (data) {
@@ -67,33 +68,35 @@
                             }
                         });
                     });
-                    $('form.show-update').on('submit',function(e){
+                    $('form.show-update').on('submit', function (e) {
                         e.preventDefault();
-                            $.ajax({
-                                url: $(this).attr('action'),
-                                type: 'PUT',
-                                global: false,
-                                cache: false,
-                                data: $(this).serialize(),
-                                success: function (data) {
-                                    errors(data, $('#form-errors'));
-                                    $("form.update select option").each(function ($ez) {
-                                        $(this).removeAttr('selected')
-                                    });
-                                },
-                                error: function (data) {
-                                    errors(data, $('#form-errors'));
-                                }
-                            });
+                        $.ajax({
+                            url: $(this).attr('action'),
+                            type: 'PUT',
+                            global: false,
+                            cache: false,
+                            data: $(this).serialize(),
+                            success: function (data) {
+                                errors(data, $('#form-errors'));
+                                $("form.update select option").each(function ($ez) {
+                                    $(this).removeAttr('selected')
+                                });
+                            },
+                            error: function (data) {
+                                errors(data, $('#form-errors'));
+                            }
+                        });
                     });
                 </script>
             </div>
             <div class="card-body">
-                    <p>Tytuł: {!! $data['title'] !!}</p>
-                    <p>Gatunek: {!! $data['genre'] !!}</p>
-                    <p>Data wydania: {!! $data['releaseDate'] !!}</p>
-                    <p>Cena: {!! $data['price'] !!}</p>
-
+                <p>Tytuł: {!! $data['title'] !!}</p>
+                <p>Gatunek: {!! $data['genre'] !!}</p>
+                <p>Data wydania: {!! $data['releaseDate'] !!}</p>
+                <p>Cena: {!! $data['price'] !!}</p>
+                <hr>
+                <p>Data ostatniej edycji: {!! $data['updated_at'] !!}</p>
+                <p>Data utworzenia: {!! $data['created_at'] !!}</p>
             </div>
         </div>
     </div>

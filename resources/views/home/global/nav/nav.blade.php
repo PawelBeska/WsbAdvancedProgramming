@@ -12,7 +12,7 @@
                 <a class="nav-link" href="{{route('home.about.index')}}" redirect="true">O mnie</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('home.table-1.index')}}" redirect="true">Tabela 1</a>
+                <a class="nav-link" href="{{route('home.movies.index')}}" redirect="true">Filmy</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('home.employees.index')}}" redirect="true">Pracownicy</a>
