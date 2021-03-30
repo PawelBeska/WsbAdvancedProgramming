@@ -15,7 +15,7 @@
                 <a class="nav-link" href="{{route('home.table-1.index')}}" redirect="true">Tabela 1</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#" redirect="true">Disabled</a>
+                <a class="nav-link" href="{{route('home.employees.index')}}" redirect="true">Pracownicy</a>
             </li>
         </ul>
     </div>
