@@ -159,6 +159,8 @@
                                 ajax: {
                                     "url": "{{Route('home.employees.get')}}",
                                     "type": "POST",
+                                    "global": false,
+                                    "cache": false,
                                     "data": {"_token": "{{ csrf_token() }}"}
                                 }
                             });
