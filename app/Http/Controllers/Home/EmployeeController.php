@@ -16,12 +16,17 @@ use Yajra\DataTables\DataTables;
 class EmployeeController extends Controller
 {
 
-    public function showData($id)
+    public function showData($id): array
     {
-        if($employee = Employee::find($id))
-        {
+
+        $message = new MessageBag();
+        if ($employee = Employee::find($id)) {
             return $employee;
-        }else abort(404);
+        } else return $message->add('error', 'Taki pracownik nie istnieje!')->jsonSerialize();
+    }
+    public function validateShow($id): bool
+    {
+        return Employee::find($id) ? true : false;
     }
 
     public function getData(UserViewEmployeesRequest $request)
@@ -41,12 +46,14 @@ class EmployeeController extends Controller
 
     public function update($id, UserUpdateEmployeesRequest $request)
     {
+
+        $message = new MessageBag();
         if ($employee = Employee::find($id)) {
-            $message = new MessageBag();
             $message->add('success', 'Pomyślnie edytowano pracownika!');
             $employee->update($request->validated());
-            return $message->jsonSerialize();
-        } else return abort(404);
+        } else  $message->add('error', 'Taki pracownik nie istnieje!');
+
+        return $message->jsonSerialize();
     }
 
     public function create(UserCreateEmployeesRequest $request)
@@ -57,13 +64,14 @@ class EmployeeController extends Controller
 
     public function destroy($id, UserDestroyEmployeesRequest $request)
     {
+
+        $message = new MessageBag();
         if ($employee = Employee::find($id)) {
-            $message = new MessageBag();
             $message->add('success', 'Pomyślnie usunięto pracownika!');
             $employee->delete();
-            return $message->jsonSerialize();
-        } else return abort(404);
+        } else $message->add('error', 'Taki pracownik nie istnieje!');
 
+        return $message->jsonSerialize();
     }
 
 }

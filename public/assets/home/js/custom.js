@@ -7,6 +7,7 @@ $(document).on({
         NProgress.done();
     }
 });
+
 function errors(data, selector) {
     selector.empty();
     selector.show();
@@ -85,13 +86,12 @@ $(document).ready(function () {
         let container = !!$(this).attr('container');
         if ($(this).attr('redirect')) {
             e.preventDefault();
+
             changeUrl($(this).attr('href'), container);
+            window.window.loc = $('form.create').attr('action') ? $('form.create').attr('action') + '/' : location.href + '/';
+
         }
     });
-
-
-
-
 
 
 });
@@ -100,12 +100,13 @@ $(document).on('click', 'button.create', function () {
     $('div.create').show();
 });
 
-function init()
-{
+function init() {
     console.log('init');
-    let formUpdate = $("form.update");
-    formUpdate.on('submit',  (function (e) {
+
+   let formUpdate = $("form.update");
+    formUpdate.on('submit', (function (e) {
         e.preventDefault();
+        e.stopImmediatePropagation();
         $.ajax({
             url: formUpdate.attr('action'),
             type: 'PUT',
@@ -127,6 +128,8 @@ function init()
     let formCreate = $("form.create");
     formCreate.submit(function (e) {
         e.preventDefault();
+
+        e.stopImmediatePropagation();
         $.ajax({
             url: formCreate.attr('action'),
             type: 'POST',
@@ -134,7 +137,7 @@ function init()
             dataType: 'json',
             contentType: false,
             cache: false,
-            processData:false,
+            processData: false,
             data: new FormData($('form.create')[0]),
             success: function (data) {
                 errors(data, $('#form-errors'));
@@ -145,15 +148,18 @@ function init()
             }
         });
     });
-    var loc = $('form.create').attr('action') ? $('form.create').attr('action') + '/' : location.href + '/';
     $(document).on('click', 'a.view', function (e) {
         e.preventDefault();
-        changeUrl(loc + $(this).parents('tr').attr('id'),false);
+
+        e.stopImmediatePropagation();
+        changeUrl( window.location + "/" + $(this).parents('tr').attr('id'), false);
     });
     $(document).on('click', 'a.remove', function (e) {
         e.preventDefault();
+
+        e.stopImmediatePropagation();
         $.ajax({
-            url: loc + $(this).parents('tr').attr('id'),
+            url: window.location + "/"  + $(this).parents('tr').attr('id'),
             type: 'DELETE',
             data: {'_token': $('meta[name="csrf-token"]').attr('content')},
             success: function (data) {
@@ -167,10 +173,12 @@ function init()
     });
     $(document).on('click', 'a.update', function (e) {
         e.preventDefault();
+
+        e.stopImmediatePropagation();
         $('div.update').show();
         $('form.update').attr({
             'id': $(this).parents('tr').attr('id'),
-            'action': loc + $(this).parents('tr').attr('id')
+            'action': window.location + "/"  + $(this).parents('tr').attr('id')
         });
         var tr = $(this).parents('tr');
         $('form.update').find(':input.form-control', ':textarea').each(function (e) {
@@ -204,7 +212,7 @@ function init()
         });
 
     });
-    $(document).on('click','button.btn-close',function(){
+    $(document).on('click', 'button.btn-close', function () {
         $(this).parents('.row').hide();
         $(this).parents('.row')
             .not(':button, :submit, :reset, :hidden')
