@@ -18,10 +18,12 @@ class MoviesController extends Controller
 
     public function showData($id)
     {
-        if($movie = Movie::find($id))
-        {
+
+        $message = new MessageBag();
+        if ($movie = Movie::find($id))
             return $movie;
-        }else abort(404);
+        else
+            return $message->add('error', 'Taki film nie istnieje!')->jsonSerialize();
     }
 
     public function getData(UserViewMoviesRequest $request)
@@ -41,12 +43,13 @@ class MoviesController extends Controller
 
     public function update($id, UserUpdateMoviesRequest $request)
     {
+        $message = new MessageBag();
         if ($movie = Movie::find($id)) {
-            $message = new MessageBag();
             $message->add('success', 'Pomyślnie edytowano film!');
             $movie->update($request->validated());
-            return $message->jsonSerialize();
-        } else return abort(404);
+        } else $message->add('error', 'Taki film nie istnieje!');
+
+        return $message->jsonSerialize();
     }
 
     public function create(UserCreateMoviesRequest $request)
@@ -57,12 +60,13 @@ class MoviesController extends Controller
 
     public function destroy($id, UserDestroyMoviesRequest $request)
     {
+
+        $message = new MessageBag();
         if ($movie = Movie::find($id)) {
-            $message = new MessageBag();
             $message->add('success', 'Pomyślnie usunięto film!');
             $movie->delete();
-            return $message->jsonSerialize();
-        } else return abort(404);
+        } else $message->add('error', 'Taki film nie istnieje!');
+        return $message->jsonSerialize();
 
     }
 
