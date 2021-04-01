@@ -51,6 +51,9 @@ class Controller extends BaseController
         if (substr_count($name, '.') >= 2) $name = substr($name, 0, strrpos($name, '.'));
         $view = (request()->ajax() ? view("home.components.${name}") : view("home.pages.${name}"));
         if (method_exists($class, 'showData')) $view->with('data', $class->showData($id, $request));
+        if (method_exists($class, 'validateShow'))
+            if(!$class->validateShow($id)) return abort(404);
+
         return $view;
     }
 }

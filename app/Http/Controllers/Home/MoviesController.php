@@ -8,6 +8,7 @@ use App\Http\Requests\UserDestroyMoviesRequest;
 use App\Http\Requests\UserStoreMoviesRequest;
 use App\Http\Requests\UserUpdateMoviesRequest;
 use App\Http\Requests\UserViewMoviesRequest;
+use App\Models\Employee;
 use App\Models\Movie;
 
 use Illuminate\Support\MessageBag;
@@ -25,7 +26,10 @@ class MoviesController extends Controller
         else
             return $message->add('error', 'Taki film nie istnieje!')->jsonSerialize();
     }
-
+    public function validateShow($id): bool
+    {
+        return Movie::find($id) ? true : false;
+    }
     public function getData(UserViewMoviesRequest $request)
     {
         return DataTables::of(Movie::all())->make(true);

@@ -16,13 +16,17 @@ use Yajra\DataTables\DataTables;
 class EmployeeController extends Controller
 {
 
-    public function showData($id)
+    public function showData($id): array
     {
 
         $message = new MessageBag();
         if ($employee = Employee::find($id)) {
             return $employee;
         } else return $message->add('error', 'Taki pracownik nie istnieje!')->jsonSerialize();
+    }
+    public function validateShow($id): bool
+    {
+        return Employee::find($id) ? true : false;
     }
 
     public function getData(UserViewEmployeesRequest $request)
