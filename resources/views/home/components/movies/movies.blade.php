@@ -5,34 +5,34 @@
     <div class="col-xl">
         <div class="card">
             <div class="card-header">
-                Nowy film
-                <div class="float-right"><button type="button" class="btn btn-primary btn-sm btn-close">Zamknij</button></div>
+                {{__('messages.movies.create.title')}}
+                <div class="float-right"><button type="button" class="btn btn-primary btn-sm btn-close">{{__('messages.elements.buttons.close')}}</button></div>
             </div>
             <div class="card-body">
-                <p>Za pomocą tego formularza można dodawać nowe filmy.</p>
+                <p>{{__('messages.movies.create.description')}}</p>
                 {!! Form::open(['class'=>'create','method'=>'post','url'=>route('home.movies.store')]) !!}
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        {!! Form::label('title','Tytuł:') !!}
-                        {!! Form::text('title',null,['class'=>'form-control','required','placeholder'=>'Wpisz tytuł']) !!}
+                        {!! Form::label('title',__('messages.movies.create.fields.title.label')) !!}
+                        {!! Form::text('title',null,['class'=>'form-control','required','placeholder'=>__('messages.movies.create.fields.title.placeholder')]) !!}
                     </div>
                     <div class="form-group col-md-6">
-                        {!! Form::label('genre','Gatunek:') !!}
-                        {!! Form::text('genre',null,['class'=>'form-control','required','placeholder'=>'Wpisz gatunek']) !!}
+                        {!! Form::label('genre',__('messages.movies.create.fields.genre.label')) !!}
+                        {!! Form::text('genre',null,['class'=>'form-control','required','placeholder'=>__('messages.movies.create.fields.genre.placeholder')]) !!}
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        {!! Form::label('releaseDate','Data wydania:') !!}
-                        {!! Form::date('releaseDate',null,['class'=>'form-control','required','placeholder'=>'Wpisz datę wydania']) !!}
+                        {!! Form::label('releaseDate',__('messages.movies.create.fields.releaseDate.label')) !!}
+                        {!! Form::date('releaseDate',null,['class'=>'form-control','required','placeholder'=>__('messages.movies.create.fields.releaseDate.placeholder')]) !!}
                     </div>
                     <div class="form-group col-md-4">
-                        {!! Form::label('price','Cena:') !!}
-                        {!! Form::number('price',null,['class'=>'form-control','placeholder'=>'Wpisz cenę','required','step'=>"0.01"]) !!}
+                        {!! Form::label('price',__('messages.movies.create.fields.price.label')) !!}
+                        {!! Form::number('price',null,['class'=>'form-control','placeholder'=>__('messages.movies.create.fields.price.placeholder'),'required','step'=>"0.01"]) !!}
                     </div>
 
                 </div>
-                {!! Form::submit('Stwórz',['class'=>'btn btn-primary']) !!}
+                {!! Form::submit(__('messages.elements.buttons.add'),['class'=>'btn btn-primary']) !!}
                 {!! Form::close() !!}
             </div>
         </div>
@@ -42,36 +42,36 @@
     <div class="col-xl">
         <div class="card">
             <div class="card-header">
-                Edycja filmu
+                {{__('messages.movies.update.title')}}
                 <div class="float-right"><button type="button" class="btn btn-primary btn-sm btn-close">Zamknij</button></div>
             </div>
             <div class="card-body">
 
-                <h5 class="card-title">Szybka edycja</h5>
-                <p>Za pomocą tego formularza można edytować istniejące już filmy.</p>
+                <h5 class="card-title">
+                <p>{{__('messages.movies.update.description')}}</p>
                 {!! Form::open(['class'=>'update']) !!}
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        {!! Form::label('title','Tytuł:') !!}
-                        {!! Form::text('title',null,['class'=>'form-control','required','placeholder'=>'Wpisz tytuł']) !!}
+                        {!! Form::label('title',__('messages.movies.update.fields.title.label')) !!}
+                        {!! Form::text('title',null,['class'=>'form-control','required','placeholder'=>__('messages.movies.update.fields.title.placeholder')]) !!}
                     </div>
                     <div class="form-group col-md-6">
-                        {!! Form::label('genre','Gatunek:') !!}
-                        {!! Form::text('genre',null,['class'=>'form-control','required','placeholder'=>'Wpisz gatunek']) !!}
+                        {!! Form::label('genre',__('messages.movies.update.fields.genre.label')) !!}
+                        {!! Form::text('genre',null,['class'=>'form-control','required','placeholder'=>__('messages.movies.update.fields.genre.placeholder')]) !!}
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        {!! Form::label('releaseDate','Data wydania:') !!}
-                        {!! Form::date('releaseDate',null,['class'=>'form-control','required','placeholder'=>'Wpisz datę wydania']) !!}
+                        {!! Form::label('releaseDate',__('messages.movies.update.fields.releaseDate.label')) !!}
+                        {!! Form::date('releaseDate',null,['class'=>'form-control','required','placeholder'=>__('messages.movies.update.fields.releaseDate.placeholder')]) !!}
                     </div>
                     <div class="form-group col-md-4">
-                        {!! Form::label('price','Cena:') !!}
-                        {!! Form::number('price',null,['class'=>'form-control','placeholder'=>'Wpisz cenę','required','step'=>"0.01"]) !!}
+                        {!! Form::label('price',__('messages.movies.update.fields.price.label')) !!}
+                        {!! Form::number('price',null,['class'=>'form-control','placeholder'=>__('messages.movies.update.fields.price.placeholder'),'required','step'=>"0.01"]) !!}
                     </div>
 
                 </div>
-                {!! Form::submit('Edytuj',['class'=>'btn btn-primary']) !!}
+                {!! Form::submit(__('messages.elements.buttons.edit'),['class'=>'btn btn-primary']) !!}
                 {!! Form::close() !!}
             </div>
         </div>
@@ -81,20 +81,21 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-               Filmy
-                <div class="float-right"><button type="button" class="btn btn-primary create btn-sm">Dodaj film</button></div>
+
+                {{__('messages.movies.datatable.title')}}
+                <div class="float-right"><button type="button" class="btn btn-primary create btn-sm">{{__('messages.elements.buttons.add')}}</button></div>
             </div>
             <div class="card-body">
                 <div class="table-responsive p-t-10">
                     <table id="" class="table" style="width:100%">
                         <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Tytuł</th>
-                            <th>Data wydania</th>
-                            <th>Gatunek</th>
-                            <th>Cena</th>
-                            <th>Wybierz</th>
+                            <th>{{__('messages.movies.datatable.fields.id')}}</th>
+                            <th>{{__('messages.movies.datatable.fields.title')}}</th>
+                            <th>{{__('messages.movies.datatable.fields.releaseDate')}}</th>
+                            <th>{{__('messages.movies.datatable.fields.genre')}}</th>
+                            <th>{{__('messages.movies.datatable.fields.price')}}</th>
+                            <th>{{__('messages.movies.datatable.fields.select')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -103,26 +104,9 @@
                     <script>
                         $(document).ready(function () {
                             window.datatable = $('.table').DataTable({
-                                "language":{
-                                    "processing":     "Przetwarzanie...",
-                                    "search":         "Szukaj:",
-                                    "lengthMenu":     "Pokaż _MENU_ pozycji",
-                                    "info":           "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
-                                    "infoEmpty":      "Pozycji 0 z 0 dostępnych",
-                                    "infoFiltered":   "(filtrowanie spośród _MAX_ dostępnych pozycji)",
-                                    "loadingRecords": "Wczytywanie...",
-                                    "zeroRecords":    "Nie znaleziono pasujących pozycji",
-                                    "emptyTable":     "Brak danych",
-                                    "paginate": {
-                                        "first":      "Pierwsza",
-                                        "previous":   "Poprzednia",
-                                        "next":       "Następna",
-                                        "last":       "Ostatnia"
-                                    },
-                                    "aria": {
-                                        "sortAscending": ": aktywuj, by posortować kolumnę rosnąco",
-                                        "sortDescending": ": aktywuj, by posortować kolumnę malejąco"
-                                    }
+                                "language":
+                                    { {!!  __('messages.movies.datatable.json')!!}
+
                                 },
                                 columns: [
                                     {data: 'id', "sClass": 'id'},
@@ -141,9 +125,9 @@
                                                 Wybierz
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                <a class="dropdown-item view"  href="#">Podgląd</a>
-                                                <a class="dropdown-item update" href="#">Szybka edycja</a>
-                                                <a class="dropdown-item remove" href="#">Usuń</a>
+                                                <a class="dropdown-item view"  href="#">{{__('messages.elements.buttons.show')}}</a>
+                                                <a class="dropdown-item update" href="#">{{__('messages.elements.buttons.quickEdit')}}</a>
+                                                <a class="dropdown-item remove" href="#"> {{__('messages.elements.buttons.remove')}}</a>
                                             </div>
                                         </div>`
                                     }

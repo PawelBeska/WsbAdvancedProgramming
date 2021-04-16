@@ -101,7 +101,9 @@ return [
                 'releaseDate'=>"Data di rilascio",
                 'genre'=>"Genere",
                 'price'=>'Prezzo',
-                'select'=>'Seleziona'
+                'select'=>'Seleziona',
+                'updated_at'=>"Data dell'ultima edizione",
+                'created_at'=>'Data di creazione',
             ]
 
         ],

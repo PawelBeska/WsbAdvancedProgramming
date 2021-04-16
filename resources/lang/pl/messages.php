@@ -101,7 +101,9 @@ return [
                 'releaseDate' => "Data premiery",
                 'genre' => "Gatunek",
                 'price' => 'Cena',
-                'select' => 'Wybierz'
+                'select' => 'Wybierz',
+                'updated_at'=>'Data ostatniej edycji',
+                'created_at'=>'Data utworzenia',
             ]
 
         ],
