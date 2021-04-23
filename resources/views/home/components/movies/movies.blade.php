@@ -43,7 +43,7 @@
         <div class="card">
             <div class="card-header">
                 {{__('messages.movies.update.title')}}
-                <div class="float-right"><button type="button" class="btn btn-primary btn-sm btn-close">Zamknij</button></div>
+                <div class="float-right"><button type="button" class="btn btn-primary btn-sm btn-close">{{__('messages.elements.buttons.close')}}</button></div>
             </div>
             <div class="card-body">
 
@@ -122,7 +122,7 @@
                                             <button id="btnGroupDrop1" type="button"
                                                     class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown"
                                                     aria-haspopup="true" aria-expanded="false">
-                                                Wybierz
+                                               {{__('messages.elements.buttons.select')}}
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                                 <a class="dropdown-item view"  href="#">{{__('messages.elements.buttons.show')}}</a>

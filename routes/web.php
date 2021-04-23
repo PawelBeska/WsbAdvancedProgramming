@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::name('home.')->group(function () {
+Route::name('home.')->middleware('check.locale')->group(function () {
     Route::get('/', [\App\Http\Controllers\Home\IndexController::class, 'index'])->name('index');
 
     Route::get('/o-mnie', [\App\Http\Controllers\Home\IndexController::class, 'index'])->name('about.index');
@@ -23,4 +23,10 @@ Route::name('home.')->group(function () {
 
     Route::resource('employees', \App\Http\Controllers\Home\EmployeeController::class);
     Route::post('/employees/get', [\App\Http\Controllers\Home\EmployeeController::class, 'getData'])->name('employees.get');
+
+    Route::get('set-locale/{locale}', function ($locale) {
+        App::setLocale($locale);
+        session()->put('locale', $locale);
+        return redirect()->back();
+    })->name('locale.setting');
 });

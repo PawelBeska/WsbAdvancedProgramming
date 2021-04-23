@@ -3,31 +3,31 @@
     <div class="col-xl">
         <div class="card">
             <div class="card-header">
-                Edycja
+                {{__('messages.employees.update.title')}}
                 <div class="float-right">
-                    <button type="button" class="btn btn-primary btn-sm btn-close">Zamknij</button>
+                    <button type="button" class="btn btn-primary btn-sm btn-close">{{__('messages.elements.buttons.close')}}</button>
                 </div>
             </div>
             <div class="card-body">
                 {!! Form::open(['class'=>'show-update','method'=>'put','url'=>route('home.employees.update',['employee'=>$data['id']])]) !!}
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        {!! Form::label('first_name','Imie:') !!}
-                        {!! Form::text('first_name',$data['first_name'],['class'=>'form-control','required','placeholder'=>'Wpisz imie']) !!}
+                        {!! Form::label('first_name',__('messages.employees.update.fields.first_name.label')) !!}
+                        {!! Form::text('first_name',$data['first_name'],['class'=>'form-control','required','placeholder'=>__('messages.employees.update.fields.first_name.placeholder')]) !!}
                     </div>
                     <div class="form-group col-md-6">
-                        {!! Form::label('last_name','Nazwisko:') !!}
-                        {!! Form::text('last_name',$data['last_name'],['class'=>'form-control','required','placeholder'=>'Wpisz nazwisko']) !!}
+                        {!! Form::label('last_name',__('messages.employees.update.fields.last_name.label')) !!}
+                        {!! Form::text('last_name',$data['last_name'],['class'=>'form-control','required','placeholder'=>__('messages.employees.update.fields.last_name.placeholder')]) !!}
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        {!! Form::label('birth_date','Data urodzenia:') !!}
-                        {!! Form::date('birth_date',$data['birth_date'],['class'=>'form-control','required','placeholder'=>'Wpisz datę urodzenia']) !!}
+                        {!! Form::label('birth_date',__('messages.employees.create.fields.birth_date.label')) !!}
+                        {!! Form::date('birth_date',$data['birth_date'],['class'=>'form-control','required','placeholder'=>__('messages.employees.create.fields.birth_date.placeholder')]) !!}
                     </div>
                     <div class="form-group col-md-4">
-                        {!! Form::label('phone','Numer telefonu:') !!}
-                        {!! Form::number('phone',$data['phone'],['class'=>'form-control','placeholder'=>'Wpisz numer telefonu','required']) !!}
+                        {!! Form::label('phone',__('messages.employees.create.fields.phone.label')) !!}
+                        {!! Form::number('phone',$data['phone'],['class'=>'form-control','placeholder'=>__('messages.employees.create.fields.phone.placeholder'),'required']) !!}
                     </div>
 
                 </div>
@@ -41,11 +41,11 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                Podgląd pracownika id: {{$data['id']}}
+                {{__('messages.employees.update.title')}} {{$data['id']}}
 
                 <div class="float-right">
-                    <button type="button" class="btn mr-1 btn-primary btn-sm btn-edit">Edytuj</button>
-                    <button type="button" class="btn btn-danger btn-sm btn-delete">Usuń</button>
+                    <button type="button" class="btn mr-1 btn-primary btn-sm btn-edit">{{__('messages.elements.buttons.close')}}</button>
+                    <button type="button" class="btn btn-danger btn-sm btn-delete">{{__('messages.elements.buttons.remove')}}</button>
                 </div>
                 <script>
                     $('button.btn-edit').on('click', function () {
@@ -90,13 +90,13 @@
                 </script>
             </div>
             <div class="card-body">
-                <p>Imie: {!! $data['first_name'] !!}</p>
-                <p>Nazwisko: {!! $data['last_name'] !!}</p>
-                <p>Data urodzenia: {!! $data['birth_date'] !!}</p>
-                <p>Numer telefonu: {!! $data['phone'] !!}</p>
+                <p>{{__('messages.employees.update.fields.first_name.label')}}: {!! $data['first_name'] !!}</p>
+                <p>{{__('messages.employees.update.fields.last_name.label')}}: {!! $data['last_name'] !!}</p>
+                <p>{{__('messages.employees.update.fields.birth_date.label')}}: {!! $data['birth_date'] !!}</p>
+                <p>{{__('messages.employees.update.fields.phone.label')}}: {!! $data['phone'] !!}</p>
                 <hr>
-                <p>Data ostatniej edycji: {!! $data['updated_at'] !!}</p>
-                <p>Data utworzenia: {!! $data['created_at'] !!}</p>
+                <p>{{__('messages.employees.datatable.fields.updated_at')}}: {!! $data['updated_at'] !!}</p>
+                <p>{{__('messages.employees.datatable.fields.created_at')}}: {!! $data['created_at'] !!}</p>
 
             </div>
         </div>
