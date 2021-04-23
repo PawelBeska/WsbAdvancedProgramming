@@ -3,35 +3,35 @@
     <div class="col-xl">
         <div class="card">
             <div class="card-header">
-                Edycja
+                {{__('messages.movies.update.title')}}
                 <div class="float-right">
-                    <button type="button" class="btn btn-primary btn-sm btn-close">Zamknij</button>
+                    <button type="button" class="btn btn-primary btn-sm btn-close">{{__('messages.elements.buttons.close')}}</button>
                 </div>
             </div>
             <div class="card-body">
                 {!! Form::open(['class'=>'show-update','method'=>'put','url'=>route('home.movies.update',['movie'=>$data['id']])]) !!}
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        {!! Form::label('title','Tytuł:') !!}
-                        {!! Form::text('title',$data['title'],['class'=>'form-control','required','placeholder'=>'Wpisz tytuł']) !!}
+                        {!! Form::label('title',__('messages.movies.update.fields.title.label')) !!}
+                        {!! Form::text('title',$data['title'],['class'=>'form-control','required','placeholder'=>__('messages.movies.update.fields.title.placeholder')]) !!}
                     </div>
                     <div class="form-group col-md-6">
-                        {!! Form::label('genre','Gatunek:') !!}
-                        {!! Form::text('genre',$data['genre'],['class'=>'form-control','required','placeholder'=>'Wpisz gatunek']) !!}
+                        {!! Form::label('genre',__('messages.movies.update.fields.genre.label')) !!}
+                        {!! Form::text('genre',$data['genre'],['class'=>'form-control','required','placeholder'=>__('messages.movies.update.fields.genre.placeholder')]) !!}
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        {!! Form::label('releaseDate','Data wydania:') !!}
-                        {!! Form::date('releaseDate',$data['releaseDate'],['class'=>'form-control','required','placeholder'=>'Wpisz datę wydania']) !!}
+                        {!! Form::label('releaseDate',__('messages.movies.update.fields.releaseDate.label')) !!}
+                        {!! Form::date('releaseDate',$data['releaseDate'],['class'=>'form-control','required','placeholder'=>__('messages.movies.update.fields.releaseDate.placeholder')]) !!}
                     </div>
                     <div class="form-group col-md-4">
-                        {!! Form::label('price','Cena:') !!}
-                        {!! Form::number('price',$data['price'],['class'=>'form-control','placeholder'=>'Wpisz cenę','required','step'=>"0.01"]) !!}
+                        {!! Form::label('price',__('messages.movies.update.fields.price.label')) !!}
+                        {!! Form::number('price',$data['price'],['class'=>'form-control','placeholder'=>__('messages.movies.update.fields.price.placeholder'),'required','step'=>"0.01"]) !!}
                     </div>
 
                 </div>
-                {!! Form::submit('Edytuj',['class'=>'btn btn-primary']) !!}
+                {!! Form::submit(__('messages.elements.buttons.edit'),['class'=>'btn btn-primary']) !!}
                 {!! Form::close() !!}
             </div>
         </div>
@@ -41,11 +41,11 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                Podgląd filmu id: {{$data['id']}}
+                {{__('messages.movies.update.title')}}: {{$data['title']}} ({{$data['id']}})
 
                 <div class="float-right">
-                    <button type="button" class="btn mr-1 btn-primary btn-sm btn-edit">Edytuj</button>
-                    <button type="button" class="btn btn-danger btn-sm btn-delete">Usuń</button>
+                    <button type="button" class="btn mr-1 btn-primary btn-sm btn-edit">{{__('messages.elements.buttons.edit')}}</button>
+                    <button type="button" class="btn btn-danger btn-sm btn-delete">{{__('messages.elements.buttons.remove')}}</button>
                 </div>
                 <script>
                     $('button.btn-edit').on('click', function () {
@@ -90,13 +90,13 @@
                 </script>
             </div>
             <div class="card-body">
-                <p>Tytuł: {!! $data['title'] !!}</p>
-                <p>Gatunek: {!! $data['genre'] !!}</p>
-                <p>Data wydania: {!! $data['releaseDate'] !!}</p>
-                <p>Cena: {!! $data['price'] !!}</p>
+                <p>{{__('messages.movies.datatable.fields.title')}}: {!! $data['title'] !!}</p>
+                <p>{{__('messages.movies.datatable.fields.genre')}}: {!! $data['genre'] !!}</p>
+                <p>{{__('messages.movies.datatable.fields.releaseDate')}}: {!! $data['releaseDate'] !!}</p>
+                <p>{{__('messages.movies.datatable.fields.price')}}: {!! $data['price'] !!}</p>
                 <hr>
-                <p>Data ostatniej edycji: {!! $data['updated_at'] !!}</p>
-                <p>Data utworzenia: {!! $data['created_at'] !!}</p>
+                <p>{{__('messages.movies.datatable.fields.updated_at')}}: {!! $data['updated_at'] !!}</p>
+                <p>{{__('messages.movies.datatable.fields.created_at')}}: {!! $data['created_at'] !!}</p>
             </div>
         </div>
     </div>

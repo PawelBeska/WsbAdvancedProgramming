@@ -2,6 +2,12 @@
 
 return [
 
+    'menu' => [
+        'movies' => "Filmy",
+        'home' => 'Strona główna',
+        'employees' => 'Pracownicy',
+        'about' => "O mnie"
+    ],
     'elements' => [
         'buttons' => [
             'close' => 'Zamknij',
@@ -101,7 +107,90 @@ return [
                 'releaseDate' => "Data premiery",
                 'genre' => "Gatunek",
                 'price' => 'Cena',
-                'select' => 'Wybierz'
+                'select' => 'Wybierz',
+                'updated_at' => 'Data ostatniej edycji',
+                'created_at' => 'Data utworzenia',
+            ]
+
+        ],
+    ],
+
+    'employees' => [
+        'create' => [
+            'title' => "Nowy pracownik",
+            'description' => "Za pomocą tego formularza można dodawać nowych pracowników",
+            'fields' => [
+                'first_name' => [
+                    'label' => 'Imie:',
+                    'placeholder' => "Wpisz imie"
+                ],
+                'last_name' => [
+                    'label' => 'Nazwisko:',
+                    'placeholder' => 'Wpisz nazwisko',
+                ],
+                'birth_date' => [
+                    'label' => 'Data urodzenia:',
+                    'placeholder' => 'Wpisz datę urodzenia',
+                ],
+                'phone' => [
+                    'label' => 'Numer telefonu:',
+                    'placeholder' => 'Wpisz numer telefonu',
+                ]
+            ]
+        ],
+        'update' => [
+            'title' => "Edycja pracownika",
+            'description' => "Za pomocą tego formularza można edytować istniejących już pracowników.",
+            'fields' => [
+                'first_name' => [
+                    'label' => 'Imie:',
+                    'placeholder' => "Wpisz imie"
+                ],
+                'last_name' => [
+                    'label' => 'Nazwisko:',
+                    'placeholder' => 'Wpisz nazwisko',
+                ],
+                'birth_date' => [
+                    'label' => 'Data urodzenia:',
+                    'placeholder' => 'Wpisz datę urodzenia',
+                ],
+                'phone' => [
+                    'label' => 'Numer telefonu:',
+                    'placeholder' => 'Wpisz numer telefonu',
+                ]
+            ]
+        ],
+        'datatable' => [
+            'title' => 'Pracownicy',
+            'json' => '
+                                    "processing":     "Przetwarzanie...",
+                                    "search":         "Szukaj:",
+                                    "lengthMenu":     "Pokaż _MENU_ pozycji",
+                                    "info":           "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+                                    "infoEmpty":      "Pozycji 0 z 0 dostępnych",
+                                    "infoFiltered":   "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+                                    "loadingRecords": "Wczytywanie...",
+                                    "zeroRecords":    "Nie znaleziono pasujących pozycji",
+                                    "emptyTable":     "Brak danych",
+                                    "paginate": {
+                                        "first":      "Pierwsza",
+                                        "previous":   "Poprzednia",
+                                        "next":       "Następna",
+                                        "last":       "Ostatnia"
+                                    },
+                                    "aria": {
+                                        "sortAscending": ": aktywuj, by posortować kolumnę rosnąco",
+                                        "sortDescending": ": aktywuj, by posortować kolumnę malejąco"
+                                    }',
+            'fields' => [
+                'id' => 'Id',
+                'first_name' => 'Imie',
+                'last_name' => 'Nazwisko',
+                'birth_date' => 'Data urodzenia',
+                'phone' => 'Numer telefonu',
+                'select' => 'Wybierz',
+                'updated_at' => 'Data ostatniej edycji',
+                'created_at' => 'Data utworzenia',
             ]
 
         ],

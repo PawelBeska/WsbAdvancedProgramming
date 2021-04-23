@@ -3,16 +3,34 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ad0e7544-cec5-4705-b52a-e0019272baaa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/Table1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/MoviesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserStoreMoviesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserStoreMoviesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserUpdateMoviesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserUpdateMoviesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/components/table-1/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/components/movies/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/components/table-1/table-1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/components/movies/movies.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/it/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/it/messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/pl/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/pl/messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/components/employees/employees.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/components/employees/employees.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/components/employees/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/components/employees/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/components/movies/movies.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/components/movies/movies.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/global/nav/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/global/nav/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/pages/table-1/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/pages/movies/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/pages/table-1/table-1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/pages/movies/movies.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +38,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -151,7 +169,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/home/components" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -163,16 +186,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/home/components/table-1" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\raz4r\PhpstormProjects\WsbAdvancedProgramming\app\Http\Middleware" />
       <recent name="$PROJECT_DIR$/resources/views/home/components" />
       <recent name="$PROJECT_DIR$/resources/views/home/pages" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Home" />
       <recent name="$PROJECT_DIR$/resources/views/home/pages/table-1" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/home/components/table-1" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -191,6 +214,8 @@
       <updated>1616861886606</updated>
       <workItem from="1616861887717" duration="18524000" />
       <workItem from="1617112658052" duration="2889000" />
+      <workItem from="1618852267952" duration="7000" />
+      <workItem from="1619204972506" duration="4252000" />
     </task>
     <servers />
   </component>
@@ -208,5 +233,27 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="872" y="363" key="#Deployment" timestamp="1618566835910">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="872" y="363" key="#Deployment/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1618566835910" />
+    <state x="92" y="92" width="2376" height="1226" key="DirDiffDialog" timestamp="1618567185427">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="92" y="92" width="2376" height="1226" key="DirDiffDialog/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1618567185427" />
+    <state x="2560" y="0" width="1961" height="1107" key="dock-window-1" timestamp="1619205315684">
+      <screen x="2560" y="0" width="2560" height="1410" />
+    </state>
+    <state x="2560" y="0" width="1961" height="1107" key="dock-window-1/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1619205315684" />
+    <state x="1130" y="355" key="ftp.server.browser" timestamp="1618566832146">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1130" y="355" key="ftp.server.browser/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1618566832146" />
+    <state x="2080" y="641" key="publish.login" timestamp="1619205168684">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="2080" y="641" key="publish.login/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1619205168684" />
   </component>
 </project>
