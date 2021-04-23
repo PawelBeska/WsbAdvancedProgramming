@@ -27,6 +27,7 @@ class UserCreateMoviesRequest extends FormRequest
             'title'=>['string','required','min:3','max:64'],
             'releaseDate'=>['date','required'],
             'genre'=>['string','required','min:3','max:64'],
+            'rating'=>['required','integer'],
             'price'=>['integer','required']
         ];
     }

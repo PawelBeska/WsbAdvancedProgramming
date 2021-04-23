@@ -29,7 +29,10 @@
                         {!! Form::label('price',__('messages.movies.update.fields.price.label')) !!}
                         {!! Form::number('price',$data['price'],['class'=>'form-control','placeholder'=>__('messages.movies.update.fields.price.placeholder'),'required','step'=>"0.01"]) !!}
                     </div>
-
+                    <div class="form-group col-md-4">
+                        {!! Form::label('rating',__('messages.movies.update.fields.rating.label')) !!}
+                        {!! Form::number('rating',$data['rating'],['class'=>'form-control','placeholder'=>__('messages.movies.update.fields.rating.placeholder'),'required','step'=>"1"]) !!}
+                    </div>
                 </div>
                 {!! Form::submit(__('messages.elements.buttons.edit'),['class'=>'btn btn-primary']) !!}
                 {!! Form::close() !!}
@@ -94,6 +97,7 @@
                 <p>{{__('messages.movies.datatable.fields.genre')}}: {!! $data['genre'] !!}</p>
                 <p>{{__('messages.movies.datatable.fields.releaseDate')}}: {!! $data['releaseDate'] !!}</p>
                 <p>{{__('messages.movies.datatable.fields.price')}}: {!! $data['price'] !!}</p>
+                <p>{{__('messages.movies.datatable.fields.rating')}}: {!! $data['rating'] !!}</p>
                 <hr>
                 <p>{{__('messages.movies.datatable.fields.updated_at')}}: {!! $data['updated_at'] !!}</p>
                 <p>{{__('messages.movies.datatable.fields.created_at')}}: {!! $data['created_at'] !!}</p>

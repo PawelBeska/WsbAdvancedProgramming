@@ -53,6 +53,10 @@ return [
                 'price' => [
                     'label' => 'Prezzo',
                     'placeholder' => 'Inserisci il prezzo',
+                ],
+                'rating' => [
+                    'label' => 'Valutazione',
+                    'placeholder' => 'Immettere una valutazione',
                 ]
             ]
         ],
@@ -75,6 +79,10 @@ return [
                 'price' => [
                     'label' => 'Prezzo',
                     'placeholder' => 'Inserisci il prezzo',
+                ],
+                'rating' => [
+                    'label' => 'Valutazione',
+                    'placeholder' => 'Immettere una valutazione',
                 ]
             ]
         ],
@@ -107,6 +115,7 @@ return [
                 'genre' => "Genere",
                 'price' => 'Prezzo',
                 'select' => 'Seleziona',
+                'rating' => 'Valutazione',
                 'updated_at' => "Data dell'ultima edizione",
                 'created_at' => 'Data di creazione',
             ]

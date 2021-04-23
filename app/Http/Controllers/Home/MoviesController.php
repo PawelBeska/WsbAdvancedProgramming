@@ -49,12 +49,6 @@ class MoviesController extends Controller
         } else return abort(404);
     }
 
-    public function create(UserCreateMoviesRequest $request)
-    {
-
-
-    }
-
     public function destroy($id, UserDestroyMoviesRequest $request)
     {
         if ($movie = Movie::find($id)) {

@@ -49,12 +49,6 @@ class EmployeeController extends Controller
         } else return abort(404);
     }
 
-    public function create(UserCreateEmployeesRequest $request)
-    {
-
-
-    }
-
     public function destroy($id, UserDestroyEmployeesRequest $request)
     {
         if ($employee = Employee::find($id)) {

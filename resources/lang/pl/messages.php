@@ -54,6 +54,10 @@ return [
                 'price' => [
                     'label' => 'Cena',
                     'placeholder' => 'Wpisz cenę',
+                ],
+                'rating' => [
+                    'label' => 'Ocena:',
+                    'placeholder' => 'Wpisz ocenę',
                 ]
             ]
         ],
@@ -76,6 +80,10 @@ return [
                 'price' => [
                     'label' => 'Cena',
                     'placeholder' => 'Wpisz cenę',
+                ],
+                'rating' => [
+                    'label' => 'Ocena:',
+                    'placeholder' => 'Wpisz ocenę',
                 ]
             ]
         ],
@@ -108,6 +116,7 @@ return [
                 'genre' => "Gatunek",
                 'price' => 'Cena',
                 'select' => 'Wybierz',
+                'rating' => 'Ocena',
                 'updated_at' => 'Data ostatniej edycji',
                 'created_at' => 'Data utworzenia',
             ]
@@ -135,7 +144,7 @@ return [
                 'phone' => [
                     'label' => 'Numer telefonu:',
                     'placeholder' => 'Wpisz numer telefonu',
-                ]
+                ],
             ]
         ],
         'update' => [

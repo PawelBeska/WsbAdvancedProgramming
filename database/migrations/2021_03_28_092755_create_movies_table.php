@@ -20,6 +20,7 @@ class CreateMoviesTable extends Migration
             $table->date('releaseDate')->nullable(false);
             $table->float('price')->nullable(false);
             $table->text('genre')->nullable(false);
+            $table->integer('rating')->unsigned()->nullable(false);
 
             $table->timestamps();
         });
