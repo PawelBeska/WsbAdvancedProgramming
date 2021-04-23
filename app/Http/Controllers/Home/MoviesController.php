@@ -56,12 +56,6 @@ class MoviesController extends Controller
         return $message->jsonSerialize();
     }
 
-    public function create(UserCreateMoviesRequest $request)
-    {
-
-
-    }
-
     public function destroy($id, UserDestroyMoviesRequest $request)
     {
 

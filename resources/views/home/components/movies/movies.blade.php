@@ -30,7 +30,10 @@
                         {!! Form::label('price',__('messages.movies.create.fields.price.label')) !!}
                         {!! Form::number('price',null,['class'=>'form-control','placeholder'=>__('messages.movies.create.fields.price.placeholder'),'required','step'=>"0.01"]) !!}
                     </div>
-
+                    <div class="form-group col-md-4">
+                        {!! Form::label('rating',__('messages.movies.create.fields.rating.label')) !!}
+                        {!! Form::number('rating',null,['class'=>'form-control','placeholder'=>__('messages.movies.create.fields.rating.placeholder'),'required','step'=>"1"]) !!}
+                    </div>
                 </div>
                 {!! Form::submit(__('messages.elements.buttons.add'),['class'=>'btn btn-primary']) !!}
                 {!! Form::close() !!}
@@ -69,7 +72,10 @@
                         {!! Form::label('price',__('messages.movies.update.fields.price.label')) !!}
                         {!! Form::number('price',null,['class'=>'form-control','placeholder'=>__('messages.movies.update.fields.price.placeholder'),'required','step'=>"0.01"]) !!}
                     </div>
-
+                    <div class="form-group col-md-4">
+                        {!! Form::label('rating',__('messages.movies.update.fields.rating.label')) !!}
+                        {!! Form::number('rating',null,['class'=>'form-control','placeholder'=>__('messages.movies.update.fields.rating.placeholder'),'required','step'=>"1"]) !!}
+                    </div>
                 </div>
                 {!! Form::submit(__('messages.elements.buttons.edit'),['class'=>'btn btn-primary']) !!}
                 {!! Form::close() !!}
@@ -95,6 +101,7 @@
                             <th>{{__('messages.movies.datatable.fields.releaseDate')}}</th>
                             <th>{{__('messages.movies.datatable.fields.genre')}}</th>
                             <th>{{__('messages.movies.datatable.fields.price')}}</th>
+                            <th>{{__('messages.movies.datatable.fields.rating')}}</th>
                             <th>{{__('messages.movies.datatable.fields.select')}}</th>
                         </tr>
                         </thead>
@@ -114,6 +121,7 @@
                                     {data: 'releaseDate', "sClass": 'releaseDate'},
                                     {data: 'genre', "sClass": 'genre'},
                                     {data: 'price', "sClass": 'price'},
+                                    {data: 'rating', "sClass": 'rating'},
                                     {
                                         name: "buttons",
                                         "targets": -1,

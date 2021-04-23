@@ -56,12 +56,6 @@ class EmployeeController extends Controller
         return $message->jsonSerialize();
     }
 
-    public function create(UserCreateEmployeesRequest $request)
-    {
-
-
-    }
-
     public function destroy($id, UserDestroyEmployeesRequest $request)
     {
 
