@@ -23,18 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad0e7544-cec5-4705-b52a-e0019272baaa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Repository/Eloquent/BaseRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repository/Eloquent/EmployeeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repository/EloquentRepositoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repository/EmployeeRepositoryInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/MoviesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/MoviesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserCreateMoviesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserCreateMoviesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserStoreMoviesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserStoreMoviesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserUpdateMoviesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserUpdateMoviesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Movie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_28_092755_create_movies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_28_092755_create_movies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/it/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/it/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/pl/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/pl/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/components/movies/movies.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/components/movies/movies.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/components/movies/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/components/movies/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +174,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -189,16 +186,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/home/components/table-1" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\raz4r\PhpstormProjects\WsbAdvancedProgramming\app\Repositories" />
+      <recent name="C:\Users\raz4r\PhpstormProjects\WsbAdvancedProgramming\app\Repositories\Eloquent" />
       <recent name="C:\Users\raz4r\PhpstormProjects\WsbAdvancedProgramming\app\Http\Middleware" />
       <recent name="$PROJECT_DIR$/resources/views/home/components" />
       <recent name="$PROJECT_DIR$/resources/views/home/pages" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Home" />
-      <recent name="$PROJECT_DIR$/resources/views/home/pages/table-1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/home/components/table-1" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -218,7 +215,8 @@
       <workItem from="1616861887717" duration="18524000" />
       <workItem from="1617112658052" duration="2889000" />
       <workItem from="1618852267952" duration="7000" />
-      <workItem from="1619204972506" duration="6146000" />
+      <workItem from="1619204972506" duration="6559000" />
+      <workItem from="1619372907083" duration="4744000" />
     </task>
     <servers />
   </component>
@@ -242,10 +240,18 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="872" y="363" key="#Deployment/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1618566835910" />
-    <state x="92" y="92" width="2376" height="1226" key="DirDiffDialog" timestamp="1618567185427">
+    <state x="1074" y="429" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1619374177994">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="92" y="92" width="2376" height="1226" key="DirDiffDialog/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1618567185427" />
+    <state x="1074" y="429" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1619374177994" />
+    <state x="1010" y="459" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619373513309">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1010" y="459" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1619373513309" />
+    <state x="217" y="236" width="2376" height="1226" key="DirDiffDialog" timestamp="1619375133845">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="217" y="236" width="2376" height="1226" key="DirDiffDialog/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1619375133845" />
     <state x="2560" y="0" width="1961" height="1107" key="dock-window-1" timestamp="1619205315684">
       <screen x="2560" y="0" width="2560" height="1410" />
     </state>
@@ -258,5 +264,15 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="2080" y="641" key="publish.login/2560.0.2560.1410/0.0.2560.1410/5120.0.1920.1050@0.0.2560.1410" timestamp="1619205168684" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Repository/Eloquent/EmployeeRepository.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

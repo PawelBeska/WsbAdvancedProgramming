@@ -18,8 +18,6 @@ class Controller extends BaseController
     {
 
 
-        $string = get_class($this);
-        $class = new $string();
         $name = substr(Route::currentRouteName(), strpos(Route::currentRouteName(), '.') + 1);
 
         if (substr_count($name, '.')) {
@@ -29,7 +27,7 @@ class Controller extends BaseController
         }
         $name = ((strpos($name, '.') !== false) ? $name . $name : $name);
         $view = (request()->ajax() ? view("home.components.${name}.${name}") : view("home.pages.${name}.${name}"));
-        if (method_exists($class, 'indexData')) $view->with('indexData', $class->indexData());
+        if (method_exists($this, 'indexData')) $view->with('indexData', $this->indexData());
         return $view;
     }
 
@@ -45,12 +43,14 @@ class Controller extends BaseController
     public function show($id, Request $request)
     {
 
-        $string = get_class($this);
-        $class = new $string();
+
         $name = substr(Route::currentRouteName(), strpos(Route::currentRouteName(), '.') + 1);
         if (substr_count($name, '.') >= 2) $name = substr($name, 0, strrpos($name, '.'));
         $view = (request()->ajax() ? view("home.components.${name}") : view("home.pages.${name}"));
-        if (method_exists($class, 'showData')) $view->with('data', $class->showData($id, $request));
+        if (method_exists($this, 'showData')) $view->with('data', $this->showData($id, $request));
+        if (method_exists($this, 'validateShow'))
+            if(!$this->validateShow($id)) return abort(404);
+
         return $view;
     }
 }

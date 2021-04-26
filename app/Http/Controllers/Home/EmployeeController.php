@@ -3,30 +3,39 @@
 namespace App\Http\Controllers\Home;
 
 
-use App\Http\Requests\UserCreateEmployeesRequest;
 use App\Http\Requests\UserDestroyEmployeesRequest;
 use App\Http\Requests\UserStoreEmployeesRequest;
 use App\Http\Requests\UserUpdateEmployeesRequest;
 use App\Http\Requests\UserViewEmployeesRequest;
 use App\Models\Employee;
 
+use App\Repository\Eloquent\EmployeeRepository;
+use App\Repository\EmployeeRepositoryInterface;
 use Illuminate\Support\MessageBag;
 use Yajra\DataTables\DataTables;
 
 class EmployeeController extends Controller
 {
 
+    private $employeeRepository;
+
+    public function __construct(EmployeeRepositoryInterface $employeeRepository)
+    {
+        $this->employeeRepository = $employeeRepository;
+    }
+
+
     public function showData($id)
     {
-        if($employee = Employee::find($id))
-        {
+        if ($employee = Employee::find($id)) {
             return $employee;
-        }else abort(404);
+        } else abort(404);
     }
 
     public function getData(UserViewEmployeesRequest $request)
     {
-        return DataTables::of(Employee::all())->make(true);
+        $employees = $this->employeeRepository->all();
+        return DataTables::of($employees)->make(true);
     }
 
     public function store(UserStoreEmployeesRequest $request)
