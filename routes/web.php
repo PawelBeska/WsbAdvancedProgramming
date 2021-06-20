@@ -26,6 +26,11 @@ Route::middleware(['auth'])->group(function () {
 
         Route::resource('employees', \App\Http\Controllers\Home\EmployeeController::class);
         Route::post('/employees/get', [\App\Http\Controllers\Home\EmployeeController::class, 'getData'])->name('employees.get');
+
+        Route::resource('posts', \App\Http\Controllers\Home\PostsController::class)->except(['update']);
+        Route::post('/posts/get', [\App\Http\Controllers\Home\PostsController::class, 'getData'])->name('posts.get');
+        Route::post('/posts/{post}', [\App\Http\Controllers\Home\PostsController::class, 'update'])->name('posts.update');
+
         Route::any('/logout', function () {
             Auth::logout();
             return redirect()->route('home.index');
@@ -42,4 +47,6 @@ Route::middleware(['check.locale'])->group(function () {
         return redirect()->back();
     })->name('home.locale.setting');
 
+    Route::get('/blog',[\App\Http\Controllers\Home\BlogController::class,'index'])->name('home.blog.index');
+    Route::get('/blog/{id}',[\App\Http\Controllers\Home\BlogController::class,'show'])->name('home.blog.show');
 });

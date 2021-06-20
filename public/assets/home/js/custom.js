@@ -112,7 +112,9 @@ function init() {
             type: 'PUT',
             global: false,
             cache: false,
-            data: formUpdate.serialize(),
+            contentType: false,
+            processData: false,
+            data: new FormData($('form.update')[0]),
             success: function (data) {
                 errors(data, $('#form-errors'));
                 window.datatable.ajax.reload();

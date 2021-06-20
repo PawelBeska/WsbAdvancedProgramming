@@ -18,8 +18,7 @@ class Controller extends BaseController
     {
 
 
-        $string = get_class($this);
-        $class = new $string();
+
         $name = substr(Route::currentRouteName(), strpos(Route::currentRouteName(), '.') + 1);
 
         if (substr_count($name, '.')) {
@@ -29,7 +28,7 @@ class Controller extends BaseController
         }
         $name = ((strpos($name, '.') !== false) ? $name . $name : $name);
         $view = (request()->ajax() ? view("home.components.${name}.${name}") : view("home.pages.${name}.${name}"));
-        if (method_exists($class, 'indexData')) $view->with('indexData', $class->indexData());
+        if (method_exists($this, 'indexData')) $view->with('indexData', $this->indexData());
         return $view;
     }
 
