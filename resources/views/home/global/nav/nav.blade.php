@@ -37,6 +37,11 @@
             @endguest
         </ul>
         <ul class="navbar-nav float-right">
+            @auth()
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}">@lang('messages.menu.logout')</a>
+                </li>
+                @endauth
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('home.locale.setting', 'it') }}"
                 >Italy</a>
