@@ -3,6 +3,8 @@
 return [
 
     'menu' => [
+        'login'=>'Logowanie',
+        'register'=>'Rejestracja',
         'movies' => "Filmy",
         'home' => 'Strona główna',
         'employees' => 'Pracownicy',

@@ -2,6 +2,8 @@
 
 return [
     'menu' => [
+        'login'=>'Accedere',
+        'register'=>'Registrati',
         'movies' => "Film",
         'home' => 'Casa',
         'employees' => ' Dipendenti ',
