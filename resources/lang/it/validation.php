@@ -148,5 +148,6 @@ return [
         'birth_date' => 'data di nascita',
         'release_date' => 'data di rilascio',
 
+
     ],
 ];

@@ -124,6 +124,8 @@ return [
         'birth_date'=>'data urodzenia',
         'phone'=>'numer telefonu',
         'release_date' => 'data wydania',
+        'password'=>'hasło',
+        'password_confirmation'=>'potwierdzenie hasła'
 
     ],
 ];

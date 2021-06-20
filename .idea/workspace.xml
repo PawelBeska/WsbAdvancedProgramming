@@ -23,18 +23,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad0e7544-cec5-4705-b52a-e0019272baaa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/MoviesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/MoviesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserCreateMoviesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserCreateMoviesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserStoreMoviesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserStoreMoviesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserUpdateMoviesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserUpdateMoviesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Movie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_28_092755_create_movies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_28_092755_create_movies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/it/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/it/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/it/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/it/messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/it/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/it/validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/pl/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/pl/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/components/movies/movies.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/components/movies/movies.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/components/movies/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/components/movies/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/pl/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/pl/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/global/nav/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/global/nav/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +114,6 @@
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
@@ -158,6 +157,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1qLbbEgI3EfuEquYNieYc7WmK3s" />
@@ -177,7 +177,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -189,16 +189,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/home/components/table-1" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\raz4r\PhpstormProjects\WsbAdvancedProgramming\app\Models" />
+      <recent name="C:\Users\raz4r\PhpstormProjects\WsbAdvancedProgramming\database\migrations" />
       <recent name="C:\Users\raz4r\PhpstormProjects\WsbAdvancedProgramming\app\Http\Middleware" />
       <recent name="$PROJECT_DIR$/resources/views/home/components" />
       <recent name="$PROJECT_DIR$/resources/views/home/pages" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Home" />
-      <recent name="$PROJECT_DIR$/resources/views/home/pages/table-1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/home/components/table-1" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">

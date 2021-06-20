@@ -3,10 +3,13 @@
 return [
 
     'menu' => [
+        'login'=>'Logowanie',
+        'register'=>'Rejestracja',
         'movies' => "Filmy",
         'home' => 'Strona główna',
         'employees' => 'Pracownicy',
-        'about' => "O mnie"
+        'about' => "O mnie",
+        'logout'=>'Wyloguj'
     ],
     'elements' => [
         'buttons' => [

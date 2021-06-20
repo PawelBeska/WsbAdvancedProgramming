@@ -2,10 +2,13 @@
 
 return [
     'menu' => [
+        'login'=>'Accedere',
+        'register'=>'Registrati',
         'movies' => "Film",
         'home' => 'Casa',
         'employees' => ' Dipendenti ',
-        'about' => "Su di me"
+        'about' => "Su di me",
+        'logout'=>'Disconnettersi'
     ],
     'elements' => [
         'buttons' => [
