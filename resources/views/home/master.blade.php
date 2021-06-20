@@ -30,7 +30,7 @@
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
-
+    <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
     <script src="{{URL::asset('assets/home/js/custom.js')}}"></script>
 </head>
 <body>

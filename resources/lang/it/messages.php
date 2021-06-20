@@ -36,6 +36,80 @@ return [
 
         ]
     ],
+    'posts' => [
+        'create' => [
+            'title' => "Nowy post",
+            'description' => "Za pomocą tego formularza można dodawać nowe posty.",
+            'fields' => [
+                'title' => [
+                    'label' => 'Tytuł:',
+                    'placeholder' => "Wpisz tytuł"
+                ],
+                'description' => [
+                    'label' => 'Opis:',
+                    'placeholder' => 'Wpisz opis',
+                ],
+                'poster' => [
+                    'label' => 'Okładka:',
+                    'placeholder' => 'Wybierz okładkę',
+                ],
+            ]
+        ],
+        'update' => [
+            'title' => "Edycja postu",
+            'description' => "Za pomocą tego formularza można edytować istniejące już posty.",
+            'fields' => [
+                'title' => [
+                    'label' => 'Tytuł:',
+                    'placeholder' => "Wpisz tytuł"
+                ],
+                'author_id'=>[
+                    'label'=>'Autor:',
+                    'placeholder'=> 'Wybierz autora',
+                ],
+                'description' => [
+                    'label' => 'Opis:',
+                    'placeholder' => 'Wpisz opis',
+                ],
+                'poster' => [
+                    'label' => 'Okładka:',
+                    'placeholder' => 'Wybierz okładkę',
+                ],
+            ]
+        ],
+        'datatable' => [
+            'title' => 'Posty',
+            'json' => '
+                                    "processing":     "Przetwarzanie...",
+                                    "search":         "Szukaj:",
+                                    "lengthMenu":     "Pokaż _MENU_ pozycji",
+                                    "info":           "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+                                    "infoEmpty":      "Pozycji 0 z 0 dostępnych",
+                                    "infoFiltered":   "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+                                    "loadingRecords": "Wczytywanie...",
+                                    "zeroRecords":    "Nie znaleziono pasujących pozycji",
+                                    "emptyTable":     "Brak danych",
+                                    "paginate": {
+                                        "first":      "Pierwsza",
+                                        "previous":   "Poprzednia",
+                                        "next":       "Następna",
+                                        "last":       "Ostatnia"
+                                    },
+                                    "aria": {
+                                        "sortAscending": ": aktywuj, by posortować kolumnę rosnąco",
+                                        "sortDescending": ": aktywuj, by posortować kolumnę malejąco"
+                                    }',
+            'fields' => [
+                'id' => 'Id',
+                'title' => 'Tytuł',
+                'author' => "Autor",
+                'select' => 'Wybierz',
+                'updated_at' => 'Data ostatniej edycji',
+                'created_at' => 'Data utworzenia',
+            ]
+
+        ],
+    ],
     'movies' => [
         'create' => [
             'title' => "Nuovo film",

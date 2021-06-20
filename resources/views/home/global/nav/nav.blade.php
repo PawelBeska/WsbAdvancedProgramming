@@ -23,7 +23,14 @@
                     <a class="nav-link" href="{{route('home.employees.index')}}"
                        redirect="true">{{__('messages.menu.employees')}}</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('home.posts.index')}}"
+                       redirect="true">{{__('messages.menu.posts')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('home.blog.index')}}"
+                       redirect="true">{{__('messages.menu.blog')}}</a>
+                </li>
             @endauth
             @guest
                 <li class="nav-item">
