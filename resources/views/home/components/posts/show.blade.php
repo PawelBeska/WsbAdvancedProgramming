@@ -19,7 +19,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         {!! Form::label('poster',__('messages.posts.create.fields.poster.label')) !!}
-                        {!! Form::file('poster',['class'=>'form-control','placeholder'=>__('messages.posts.create.fields.poster.placeholder'),'required']) !!}
+                        {!! Form::file('poster',['class'=>'form-control','placeholder'=>__('messages.posts.create.fields.poster.placeholder')]) !!}
                     </div>
                 </div>
                 <div class="form-row">
@@ -69,24 +69,7 @@
                             }
                         });
                     });
-                    $('form.show-update').on('submit', function (e) {
-                        e.preventDefault();
-                        $.ajax({
-                            url: $(this).attr('action'),
-                            type: 'POST',
 
-                            data: new FormData($('form.show-update')[0]),
-                            success: function (data) {
-                                errors(data, $('#form-errors'));
-                                $("form.update select option").each(function ($ez) {
-                                    $(this).removeAttr('selected')
-                                });
-                            },
-                            error: function (data) {
-                                errors(data, $('#form-errors'));
-                            }
-                        });
-                    });
                 </script>
             </div>
             <div class="card-body">

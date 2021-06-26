@@ -103,6 +103,27 @@ $(document).on('click', 'button.create', function () {
 function init() {
     console.log('init');
 
+    $('form.show-update').on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('action'),
+            type: 'POST',
+            global: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: new FormData($('form.show-update')[0]),
+            success: function (data) {
+                errors(data, $('#form-errors'));
+                $("form.update select option").each(function ($ez) {
+                    $(this).removeAttr('selected')
+                });
+            },
+            error: function (data) {
+                errors(data, $('#form-errors'));
+            }
+        });
+    });
    let formUpdate = $("form.update");
     formUpdate.on('submit', (function (e) {
         e.preventDefault();
